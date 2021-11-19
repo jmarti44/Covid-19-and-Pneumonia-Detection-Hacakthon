@@ -1,8 +1,8 @@
 # Hackathon
 
-## Team Name: Banana Brownies with Cream
+### Team Name: Banana Brownies with Cream
 
-## Team Members:
+#### Team Members:
 *  Jose Martinez
 *  Julio Sibrian
 *  Alexis Mercado
