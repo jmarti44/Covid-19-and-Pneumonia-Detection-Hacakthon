@@ -79,10 +79,10 @@ def upload():
     file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
     prediction = load("images/{0}".format(filename))
     print('prediction',prediction)
+    normal_convert = round(prediction[0][0], 6) * 100
+    covid_convert = round(prediction[0][1], 6) * 100
+    pneumonia_convert = round(prediction[0][2], 6) * 100
     counter+=1
-    normal_convert = round(prediction[0][0], 3) * 100
-    covid_convert = round(prediction[0][1], 3) * 100
-    pneumonia_convert = round(prediction[0][2], 3) * 100
     return render_template('/doctor.html', name = name, normal=normal_convert, covid=covid_convert, pneumonia=pneumonia_convert)
 def load(path):
     model = load_model("keras_model.h5", compile=True)
