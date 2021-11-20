@@ -5,8 +5,8 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route('/')
-def doctor():
-    testing = "landing page"
+def index():
+    testing = "landing"
     return testing
 
 @app.route('/doctor.html')
