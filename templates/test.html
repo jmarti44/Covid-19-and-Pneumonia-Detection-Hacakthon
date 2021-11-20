@@ -6,17 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drag & Drop or Browse: File Upload | CodingNepal</title>
     <link rel="stylesheet" href="test.css">
-    <div id="drop-area">
-        <form class="my-form">
-          <p>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
-          <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
-          <label class="button" for="fileElem">Select some files</label>
-        </form>
-      </div>
-
 </head>
+
 <body>
- 
+  <div id="drop-area">
+    <form action="" method="POST" enctype="multipart/form-data" class="my-form">
+      <p>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
+      <input type="file" name="fileElem"  onchange="handleFiles(this.files)">
+      <!-- <label class="button" for="fileElem">Select some files</label> -->
+      <input type ="submit" value="Submit"/>
+    </form>
+    {% for file in files %}
+      <img src="{{ url_for('upload', filename=file) }}" style="width: 64px">
+    {% endfor %}
+  </div>
 </body>
 </html>
 
