@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Patient View</title>
 </head>
 <body>
-    <br>
-    <h3>Patient: {{ request.args.get('name') }}</h3>
-    <h4>Your XRAY image : </h4>
-
-    <h4>You have a  percentage  of having  diagnosis  </h4>
+    <div class="center">
+    <br><br>
+    <h4>Patient Information:</h4>
+        {{name}}
+    <h4>Your XRAY image </h4>
+    <img src="./static/COVID-1.png">
+    <br><br>
+        <strong>Diagnosis Percentages</strong>
+        <p>Normal: {{ normal }}%</p> 
+        <p>Covid: {{ covid  }}%</p>
+        <p>Pneumonia: {{ pneumonia }}%</p>
+        <br><br>
+</div>
 </body>
 
 <style>
@@ -21,9 +29,21 @@
     h4{
         text-align: center;
     }
-    body{
-        background-color: black;
-        color: rgb(192, 191, 191);
+    html{
+        background: url("./static/COVID-1.png") no-repeat center center fixed;
+        background-size: cover;
+        height: 100%;
+        overflow: hidden;
+    }
+    .center{
+        margin-top: auto;
+        text-align: center;
+        vertical-align: auto;
+        position: relative;
+        background: rgba(10, 10, 10, 0.712);
+        margin-left: 10%;
+        margin-right: 10%;
+        color: whitesmoke;
     }
 </style>
 

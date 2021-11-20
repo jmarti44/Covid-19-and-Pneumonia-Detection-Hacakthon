@@ -35,7 +35,8 @@ def generate_Prediction(path):
     return prediction
     
 
-path = "/Users/steveliang/Desktop/Hack/Hackathon/images/Normal-9716.png"    
+path = "images/covidTest.png" 
+
 result = generate_Prediction(path)
 
 

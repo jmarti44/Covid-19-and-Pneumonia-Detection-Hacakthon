@@ -6,17 +6,28 @@
   <body>
 
     <div class="center">
+        <br><br>
         <h3>Patient: {{ request.args.get('name') }}</h3>
         <h4>Upload X-ray Images</h4>
-        <form method="POST" action="/upload.html" enctype="multipart/form-data">
+        <form method="POST" action="/image.html" enctype="multipart/form-data">
         <p><input type="file" name="file">
         <input type="submit" value="Analyze"></p>
         </form>
-        <p>Normal: {{ normal }}</p>
-        <p>Covid: {{ covid }}</p>
-        <p>Pneumonia: {{ pneumonia }}</p>
+        <br><br>
+        <strong>Diagnosis Percentages</strong>
+        <p>Normal: {{ normal }}%</p> 
+        <p>Covid: {{ covid  }}%</p>
+        <p>Pneumonia: {{ pneumonia }}%</p>
+        <button type="button" onclick="goBack()">Go Back</button>
+        <br><br>
     </div>
   </body>
+
+  <script>
+    function goBack(){
+        window.location.href = "http://127.0.0.1:5000/";
+    }
+  </script>
 
   <style>
     h3{
@@ -25,17 +36,21 @@
     h4{
         text-align: center;
     }
-
-    body{
-        background-color: black;
-        color: rgb(192, 191, 191);
+    html{
+        background: url("./static/COVID-1.png") no-repeat center center fixed;
+        background-size: cover;
+        height: 100%;
+        overflow: hidden;
     }
     .center{
-        margin: auto;
-        max-width: max-content;
+        margin-top: 10%;
         text-align: center;
         vertical-align: auto;
         position: relative;
+        background: rgba(10, 10, 10, 0.712);
+        margin-left: 10%;
+        margin-right: 10%;
+        color: whitesmoke;
     }
 </style>
 </html>
