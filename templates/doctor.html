@@ -1,14 +1,37 @@
 <!doctype html>
 <html>
   <head>
-    <title>File Upload</title>
+    <title>Doctor View</title>
   </head>
   <body>
-    <h1>File Upload</h1>
-    {{name}}
-    <form method="POST" action="/upload.html" enctype="multipart/form-data">
-      <p><input type="file" name="file"></p>
-      <p><input type="submit" value="Submit"></p>
-    </form>
+    <div class="center">
+        <h3>Patient: {{ request.args.get('name') }}</h3>
+        <h4>Upload X-ray Images</h4>
+        <form method="POST" action="/upload.html" enctype="multipart/form-data">
+        <p><input type="file" name="file">
+        <input type="submit" value="Submit"></p>
+        </form>
+    </div>
   </body>
+
+  <style>
+    h3{
+        text-align: center;
+    }
+    h4{
+        text-align: center;
+    }
+
+    body{
+        background-color: black;
+        color: rgb(192, 191, 191);
+    }
+    .center{
+        margin: auto;
+        max-width: max-content;
+        text-align: center;
+        vertical-align: auto;
+        position: relative;
+    }
+</style>
 </html>

@@ -7,6 +7,24 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>patient page</h1>
+    <br>
+    <h3>Patient: {{ request.args.get('name') }}</h3>
+    <h4>Your XRAY image : </h4>
+
+    <h4>You have a  percentage  of having  diagnosis  </h4>
 </body>
+
+<style>
+    h3{
+        text-align: center;
+    }
+    h4{
+        text-align: center;
+    }
+    body{
+        background-color: black;
+        color: rgb(192, 191, 191);
+    }
+</style>
+
 </html>

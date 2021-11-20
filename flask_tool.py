@@ -12,7 +12,7 @@ import os
 
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = '/Users/josemartinez/Desktop/Hackathon/images'
+app.config['UPLOAD_FOLDER'] = 'images'
 # app.config['SECRET_KEY'] = random_key
 
 @app.route('/')
@@ -22,8 +22,8 @@ def index():
 
 @app.route('/doctor.html')
 def doctor():
-    name = request.args.get('name')
-    return render_template('doctor.html',name = name)
+    # name = request.args.get('name')
+    return render_template('doctor.html')
 
 @app.route('/patient.html')
 def patient():
@@ -43,5 +43,5 @@ def upload():
     filename = secure_filename(file.filename)
     filename = "covidTest.png"
     file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
-    return "hello"
+    return "File Uploaded Successfully"
 
