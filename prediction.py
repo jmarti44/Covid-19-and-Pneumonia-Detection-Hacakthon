@@ -1,4 +1,4 @@
-from keras.models import load_model
+
 from flask import Flask, jsonify
 from PIL import Image, ImageOps
 import json
@@ -35,7 +35,7 @@ def generate_Prediction(path):
     return prediction
     
 
-path = "/Users/steveliang/Desktop/Hack/Hackathon/images/covidTest.png"    
+path = "/Users/steveliang/Desktop/Hack/Hackathon/images/Normal-9716.png"    
 result = generate_Prediction(path)
 
 
