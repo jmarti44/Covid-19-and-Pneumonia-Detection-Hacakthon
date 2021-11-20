@@ -9,11 +9,16 @@
 <body>
     <div class="center">
     <br><br>
-    <h3>Patient: {{ request.args.get('name') }}</h3>
-    <h4>Your XRAY image : </h4>
-
-    <h4>You have a  percentage  of having  diagnosis  </h4>
+    <h4>Patient Information:</h4>
+        {{name}}
+    <h4>Your XRAY image </h4>
+    <img src="./static/COVID-1.png">
     <br><br>
+        <strong>Diagnosis Percentages</strong>
+        <p>Normal: {{ normal }}%</p> 
+        <p>Covid: {{ covid  }}%</p>
+        <p>Pneumonia: {{ pneumonia }}%</p>
+        <br><br>
 </div>
 </body>
 
@@ -31,7 +36,7 @@
         overflow: hidden;
     }
     .center{
-        margin-top: 15%;
+        margin-top: auto;
         text-align: center;
         vertical-align: auto;
         position: relative;
