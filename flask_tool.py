@@ -1,20 +1,33 @@
-from flask import Flask
-from flask import render_template
-from flask import request
-# from werkzeug.wrappers import request
+from flask import *
+import json
+
 
 
 app = Flask(__name__)
+
+result = []
+
+f = open("data.json",)
+data = json.load(f)
+
+for i in data["assemble"]:
+    print(i)
+    result.append(i)
+
+
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
 
-@app.route('/doctor.html')
+@app.route('/doctor.html', methods=["POST", "GET"])
 def doctor():
-    name = request.args.get('name')
-    return render_template('doctor.html')
+    if request.method == "POST":
+        normal_convert = result["normal"]
+        covid_convert = result["covid"]
+        pneumonia_convert = result["pneumonia"]
+    return render_template('/templates/doctor.html', normal=normal_convert, covid=covid_convert, pneumonia=pneumonia_convert)
 
 @app.route('/patient.html')
 def patient():
