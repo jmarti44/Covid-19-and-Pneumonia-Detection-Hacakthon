@@ -11,7 +11,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     #testing = "landing"
-    return render_template('test.html')
+    return render_template('index.html')
 
 @app.route('/doctor.html')
 def doctor():
