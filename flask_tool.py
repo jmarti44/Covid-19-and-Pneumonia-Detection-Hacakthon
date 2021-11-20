@@ -19,4 +19,4 @@ def doctor():
 @app.route('/patient.html')
 def patient():
     testing = "patient page"
-    return testing
+    return render_template("patient.html")
