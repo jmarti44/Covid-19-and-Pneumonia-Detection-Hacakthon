@@ -46,13 +46,6 @@ def doctor():
 def patient():
     return render_template("patient.html")
 
-# @app.route('/test.html')
-# def upload():
-#     return render_template('test.html')
-
-# @app.route('/doctor.html', methods=['GET','POST'])
-# def doctor():
-#     return render_template('doctor.html')
 
 @app.route('/upload.html',methods = ['GET','POST'])
 def upload():
