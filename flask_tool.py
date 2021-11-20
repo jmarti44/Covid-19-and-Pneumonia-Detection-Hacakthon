@@ -21,6 +21,9 @@ for i in data["assemble"]:
     print(i)
     result.append(i)
 
+app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = 'images'
+# app.config['SECRET_KEY'] = random_key
 
 
 @app.route('/')
@@ -30,6 +33,7 @@ def index():
 
 @app.route('/doctor.html', methods=["POST", "GET"])
 def doctor():
+
     name = request.args.get('name')
     # if request.method == "POST":
     normal_convert = data["assemble"][0]["normal"]
@@ -56,5 +60,5 @@ def upload():
     filename = secure_filename(file.filename)
     filename = "covidTest.png"
     file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
-    return "hello"
+    return "File Uploaded Successfully"
 
