@@ -4,9 +4,88 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coronavirus Detection</title>
 </head>
 <body>
-    <h1>Landing Page</h1>
+    <div class="center">
+        <br>
+        <h2>Login Here</h2>
+        <form id="form" onsubmit="return onSubmit();">
+            <h4>Enter your name: </h4>
+            <input type="text" id="name" name="name">
+            <h4>Are you a patient or a doctor?</h4>
+            <button class="button" onclick="patientClick()">Patient</button>
+            <button class="button" onclick="doctorClick()">Doctor</button> 
+            <br>
+        </form>
+        <br><br>
+    </div>
 </body>
+
+<script type="text/javascript">
+var doctorClicked = false;
+var patientClicked = false;
+
+function doctorClick(){
+    if(patientClicked == true)
+        patientClicked = false;
+    doctorClicked = true;
+}
+
+function patientClick(){
+    if (doctorClicked == true){
+        doctorClicked = false;
+    }
+    patientClicked = true;
+}
+
+function onSubmit(){
+    if(patientClicked == true){
+        document.getElementById("form").action ="/patient.html";
+    }
+    else if(doctorClicked == true){
+        document.getElementById("form").action ="/doctor.html";
+    }
+    return true;
+}
+
+</script>
+
+<style>
+    h2{
+        text-align:center;
+    }
+    h4{
+        text-align:center;
+    }
+    .center{
+        margin-top: 25%;
+        text-align: center;
+        vertical-align: auto;
+        background: rgba(245, 245, 245, 0.534);
+        position: relative;
+    }
+    button{
+        background-color: none;
+        border-radius: 100px;
+    }
+    .button:focus{
+        background-color: grey;
+    }
+    .button:hover{
+        background-color: grey;
+    }
+    body{
+        color: black;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+    html{
+        background: url("./static/COVID-1.png") no-repeat center center fixed;
+        background-size: cover;
+        height: 100%;
+        overflow: hidden;
+    }
+</style>
 </html>
+
