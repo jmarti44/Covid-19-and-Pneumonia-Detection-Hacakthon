@@ -9,7 +9,7 @@ import os
 
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = '/Users/steveliang/Desktop/Hack/Hackathon/images'
+app.config['UPLOAD_FOLDER'] = 'images'
 # app.config['SECRET_KEY'] = random_key
 
 result = []
@@ -31,12 +31,11 @@ def index():
 @app.route('/doctor.html', methods=["POST", "GET"])
 def doctor():
     name = request.args.get('name')
-    if request.method == "POST":
-        normal_convert = result["normal"]
-        covid_convert = result["covid"]
-        pneumonia_convert = result["pneumonia"]
-    
-    return render_template('doctor.html',name = name, normal=normal_convert, covid=covid_convert, pneumonia=pneumonia_convert)
+    # if request.method == "POST":
+    normal_convert = data["assemble"][0]["normal"]
+    covid_convert = data["assemble"][0]["covid"]
+    pneumonia_convert = data["assemble"][0]["pneumonia"]
+    return render_template('/doctor.html', name = name, normal=normal_convert, covid=covid_convert, pneumonia=pneumonia_convert)
 
 
 @app.route('/patient.html')
