@@ -1,6 +1,6 @@
 # Hackathon
 
-### Team Name: Banana Brownies with Cream
+A simple website that can upload a sample lung x-ray image and outputs the probabilites of a covid or pneumonia infection
 
 #### Team Members:
 *  Jose Martinez
@@ -10,6 +10,4 @@
 *  Steve Liang
 
 
-
-#### Frontend Docs:
 
