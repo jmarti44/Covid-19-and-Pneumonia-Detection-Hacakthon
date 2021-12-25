@@ -1,4 +1,4 @@
-# Hackathon
+# Covid-19 and Pneumonia Detection Hackathon
 
 A simple website that can upload a sample lung x-ray image and outputs the probabilites of a covid or pneumonia infection
 
